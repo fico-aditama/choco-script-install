@@ -31,7 +31,6 @@ $apps = @(
     "virtualbox",
     "docker-desktop",
     "winrar",
-    "netcut",
     "line",
     "androidstudio",
     "steam",
