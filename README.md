@@ -1,6 +1,6 @@
 # Chocolatey Installer Script
 
-Script ini digunakan untuk menginstall Chocolatey jika belum terpasang, dan kemudian menginstall aplikasi-aplikasi yang tercantum. Script ini akan mengecek apakah aplikasi sudah terpasang sebelumnya sebelum mencoba menginstallnya.
+Script ini menginstall Chocolatey jika belum terpasang, dan kemudian menginstall aplikasi-aplikasi yang tercantum. Script ini juga akan mengecek apakah aplikasi sudah terpasang sebelum mencoba menginstallnya.
 
 ## Prasyarat
 
@@ -17,7 +17,6 @@ Script ini digunakan untuk menginstall Chocolatey jika belum terpasang, dan kemu
 - VirtualBox
 - Docker Desktop
 - WinRAR
-- Netcut
 - LINE
 - Android Studio
 - Steam
@@ -30,23 +29,20 @@ Script ini digunakan untuk menginstall Chocolatey jika belum terpasang, dan kemu
 ## Cara Menggunakan
 
 1. Buka PowerShell dengan hak administrator.
-2. Salin dan tempel script PowerShell di atas ke dalam jendela PowerShell.
-3. Tekan `Enter` untuk menjalankan script.
-
-Script ini akan:
-
-1. Mengecek apakah Chocolatey sudah terpasang. Jika belum, script akan menginstall Chocolatey.
-2. Mengecek apakah setiap aplikasi dalam daftar sudah terpasang. Jika belum, script akan menginstall aplikasi tersebut menggunakan Chocolatey.
+2. Jalankan perintah berikut untuk mendownload dan menjalankan script:
+    ```powershell
+    Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/fico-aditama/choco-script-install/main/install.ps1'))
+    ```
+3. Script akan menginstall Chocolatey (jika belum terpasang) dan kemudian menginstall aplikasi-aplikasi yang tercantum.
 
 ## Referensi Lain untuk Download Otomatis
 
 Jika Anda tidak bisa menggunakan Chocolatey, berikut adalah beberapa alternatif lain:
 
-1. **Scoop** - Manajer paket untuk Windows yang memungkinkan instalasi aplikasi melalui command line.
+1. **Scoop** - Manajer paket untuk Windows.
     - Instalasi: Buka PowerShell dan jalankan:
       ```powershell
-      Set-ExecutionPolicy RemoteSigned -scope CurrentUser
-      irm get.scoop.sh | iex
+      Set-ExecutionPolicy RemoteSigned -scope CurrentUser; irm get.scoop.sh | iex
       ```
     - Untuk menginstall aplikasi: `scoop install <nama_aplikasi>`
 
